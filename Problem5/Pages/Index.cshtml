@@ -1,0 +1,55 @@
+@page
+@using Problem5.Pages
+@model IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 20px auto;">
+        <h1>Employee List</h1>
+        <a href="/Create">Add New Employee</a>
+
+        @if (Model.Employees.Count == 0)
+        {
+            <p>No employees found. <a href="/Create">Add one</a></p>
+        }
+        else
+        {
+            <table border="1" style="margin-top: 20px; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px;">ID</th>
+                        <th style="padding: 10px;">First Name</th>
+                        <th style="padding: 10px;">Last Name</th>
+                        <th style="padding: 10px;">Email</th>
+                        <th style="padding: 10px;">Job Title</th>
+                        <th style="padding: 10px;">Department</th>
+                        <th style="padding: 10px;">Salary</th>
+                        <th style="padding: 10px;">Hire Date</th>
+                        <th style="padding: 10px;">Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var employee in Model.Employees)
+                    {
+                        <tr>
+                            <td style="padding: 10px;">@employee.Id</td>
+                            <td style="padding: 10px;">@employee.FirstName</td>
+                            <td style="padding: 10px;">@employee.LastName</td>
+                            <td style="padding: 10px;">@employee.Email</td>
+                            <td style="padding: 10px;">@employee.JobTitle</td>
+                            <td style="padding: 10px;">@employee.Department</td>
+                            <td style="padding: 10px;">$@employee.Salary</td>
+                            <td style="padding: 10px;">@employee.HireDate.ToString("yyyy-MM-dd")</td>
+                            <td style="padding: 10px;">@employee.PhoneNumber</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@page
+@using Problem1.Pages
+@model IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 20px auto;">
+        <h1>Product List</h1>
+        <a href="/Create">Add New Product</a>
+
+        @if (Model.Products.Count == 0)
+        {
+            <p>No products found. <a href="/Create">Create one</a></p>
+        }
+        else
+        {
+            <table border="1" style="margin-top: 20px; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px;">ID</th>
+                        <th style="padding: 10px;">Name</th>
+                        <th style="padding: 10px;">Description</th>
+                        <th style="padding: 10px;">Price</th>
+                        <th style="padding: 10px;">Category</th>
+                        <th style="padding: 10px;">Quantity</th>
+                        <th style="padding: 10px;">Manufacturer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td style="padding: 10px;">@product.Id</td>
+                            <td style="padding: 10px;">@product.Name</td>
+                            <td style="padding: 10px;">@product.Description</td>
+                            <td style="padding: 10px;">$@product.Price</td>
+                            <td style="padding: 10px;">@product.Category</td>
+                            <td style="padding: 10px;">@product.Quantity</td>
+                            <td style="padding: 10px;">@product.Manufacturer</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>

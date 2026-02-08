@@ -1,0 +1,63 @@
+@page
+@using Problem5.Pages
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 20px auto;">
+        <h1>Add New Employee</h1>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div style="margin-bottom: 15px;">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="Employee.FirstName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="Employee.LastName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Employee.Email" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="JobTitle">Job Title:</label>
+                <input type="text" id="JobTitle" name="Employee.JobTitle" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Department">Department:</label>
+                <input type="text" id="Department" name="Employee.Department" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Salary">Salary:</label>
+                <input type="number" id="Salary" name="Employee.Salary" step="0.01" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="HireDate">Hire Date:</label>
+                <input type="date" id="HireDate" name="Employee.HireDate" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="PhoneNumber">Phone Number:</label>
+                <input type="text" id="PhoneNumber" name="Employee.PhoneNumber" required />
+            </div>
+
+            <button type="submit">Save Employee</button>
+            <a href="/" style="margin-left: 10px;">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

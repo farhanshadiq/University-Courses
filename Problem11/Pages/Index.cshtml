@@ -1,0 +1,55 @@
+@page
+@using Problem11.Pages
+@model IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Product List</title>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 20px auto;">
+        <h1>Electronics Product List</h1>
+        <a href="/Create">Add New Product</a>
+
+        @if (Model.ElectronicsProducts.Count == 0)
+        {
+            <p>No products found. <a href="/Create">Add one</a></p>
+        }
+        else
+        {
+            <table border="1" style="margin-top: 20px; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px;">ID</th>
+                        <th style="padding: 10px;">Product Name</th>
+                        <th style="padding: 10px;">Brand</th>
+                        <th style="padding: 10px;">Model</th>
+                        <th style="padding: 10px;">Price</th>
+                        <th style="padding: 10px;">Category</th>
+                        <th style="padding: 10px;">Warranty</th>
+                        <th style="padding: 10px;">Stock</th>
+                        <th style="padding: 10px;">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.ElectronicsProducts)
+                    {
+                        <tr>
+                            <td style="padding: 10px;">@product.Id</td>
+                            <td style="padding: 10px;">@product.ProductName</td>
+                            <td style="padding: 10px;">@product.Brand</td>
+                            <td style="padding: 10px;">@product.Model</td>
+                            <td style="padding: 10px;">$@product.Price</td>
+                            <td style="padding: 10px;">@product.Category</td>
+                            <td style="padding: 10px;">@product.WarrantyPeriod</td>
+                            <td style="padding: 10px;">@product.StockQuantity</td>
+                            <td style="padding: 10px;">@product.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+</html>

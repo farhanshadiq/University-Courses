@@ -1,0 +1,65 @@
+@page
+@using Problem7.Pages
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model EditModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Teacher</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 20px auto;">
+        <h1>Edit Teacher</h1>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="Teacher.Id" value="@Model.Teacher.Id" />
+
+            <div style="margin-bottom: 15px;">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="Teacher.FirstName" value="@Model.Teacher.FirstName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="Teacher.LastName" value="@Model.Teacher.LastName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Teacher.Email" value="@Model.Teacher.Email" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Subject">Subject:</label>
+                <input type="text" id="Subject" name="Teacher.Subject" value="@Model.Teacher.Subject" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Department">Department:</label>
+                <input type="text" id="Department" name="Teacher.Department" value="@Model.Teacher.Department" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Salary">Salary:</label>
+                <input type="number" id="Salary" name="Teacher.Salary" value="@Model.Teacher.Salary" step="0.01" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="JoinDate">Join Date:</label>
+                <input type="date" id="JoinDate" name="Teacher.JoinDate" value="@Model.Teacher.JoinDate.ToString("yyyy-MM-dd")" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="PhoneNumber">Phone Number:</label>
+                <input type="text" id="PhoneNumber" name="Teacher.PhoneNumber" value="@Model.Teacher.PhoneNumber" required />
+            </div>
+
+            <button type="submit">Update Teacher</button>
+            <a href="/" style="margin-left: 10px;">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@page
+@using Problem10.Pages
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model LoginModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <div style="max-width: 400px; margin: 50px auto;">
+        <h1>Admin Login</h1>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div style="color: red; margin-bottom: 15px;">
+                @Model.ErrorMessage
+            </div>
+        }
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div style="margin-bottom: 15px;">
+                <label for="Username">Username:</label>
+                <input type="text" id="Username" name="Username" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Password">Password:</label>
+                <input type="password" id="Password" name="Password" required />
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p style="margin-top: 20px;">Demo Credentials: <br /> Username: admin <br /> Password: admin123</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+@page
+@using Problem11.Pages
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Electronics Product</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 20px auto;">
+        <h1>Add New Electronics Product</h1>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <div style="margin-bottom: 15px;">
+                <label for="ProductName">Product Name:</label>
+                <input type="text" id="ProductName" name="ElectronicsProduct.ProductName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Brand">Brand:</label>
+                <input type="text" id="Brand" name="ElectronicsProduct.Brand" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Model">Model:</label>
+                <input type="text" id="Model" name="ElectronicsProduct.Model" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Price">Price:</label>
+                <input type="number" id="Price" name="ElectronicsProduct.Price" step="0.01" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Category">Category:</label>
+                <input type="text" id="Category" name="ElectronicsProduct.Category" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="WarrantyPeriod">Warranty Period:</label>
+                <input type="text" id="WarrantyPeriod" name="ElectronicsProduct.WarrantyPeriod" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="StockQuantity">Stock Quantity:</label>
+                <input type="number" id="StockQuantity" name="ElectronicsProduct.StockQuantity" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Description">Description:</label>
+                <textarea id="Description" name="ElectronicsProduct.Description" required></textarea>
+            </div>
+
+            <button type="submit">Save Product</button>
+            <a href="/" style="margin-left: 10px;">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

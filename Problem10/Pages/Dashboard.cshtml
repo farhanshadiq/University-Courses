@@ -1,0 +1,35 @@
+@page
+@using Problem10.Pages
+@model DashboardModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 20px auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Admin Dashboard</h1>
+            <div>
+                <span>Welcome, @Model.Username!</span>
+                <a href="/Logout" style="margin-left: 20px;">Logout</a>
+            </div>
+        </div>
+
+        <hr />
+
+        <h2>Admin Panel Demo</h2>
+        <p>This is the admin panel dashboard. You are logged in as: <strong>@Model.Username</strong></p>
+
+        <div style="background-color: #f0f0f0; padding: 20px; margin-top: 20px;">
+            <h3>Panel Features:</h3>
+            <ul>
+                <li>User Authentication</li>
+                <li>Session Management</li>
+                <li>Logout Option</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

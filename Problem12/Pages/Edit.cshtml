@@ -1,0 +1,65 @@
+@page
+@using Problem12.Pages
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model EditModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 20px auto;">
+        <h1>Edit Student</h1>
+
+        <form method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="Student.Id" value="@Model.Student.Id" />
+
+            <div style="margin-bottom: 15px;">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="Student.FirstName" value="@Model.Student.FirstName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="Student.LastName" value="@Model.Student.LastName" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Student.Email" value="@Model.Student.Email" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="RollNumber">Roll Number:</label>
+                <input type="text" id="RollNumber" name="Student.RollNumber" value="@Model.Student.RollNumber" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Semester">Semester:</label>
+                <input type="text" id="Semester" name="Student.Semester" value="@Model.Student.Semester" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="Department">Department:</label>
+                <input type="text" id="Department" name="Student.Department" value="@Model.Student.Department" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="CGPA">CGPA:</label>
+                <input type="number" id="CGPA" name="Student.CGPA" value="@Model.Student.CGPA" step="0.01" min="0" max="100" required />
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="EnrollmentDate">Enrollment Date:</label>
+                <input type="date" id="EnrollmentDate" name="Student.EnrollmentDate" value="@Model.Student.EnrollmentDate.ToString("yyyy-MM-dd")" required />
+            </div>
+
+            <button type="submit">Update Student</button>
+            <a href="/" style="margin-left: 10px;">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>
